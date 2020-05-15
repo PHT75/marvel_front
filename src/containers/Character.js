@@ -21,7 +21,7 @@ const Character = () => {
   }, [id]);
 
   return isLoading ? (
-    <span>Chargement...</span>
+    <div className="chargement">Chargement...</div>
   ) : (
     "Hello world"
     // data.results.map((character) => {
