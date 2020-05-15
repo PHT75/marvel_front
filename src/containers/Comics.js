@@ -17,7 +17,7 @@ const Comics = () => {
   }, []);
 
   return isLoading ? (
-    <div> Chargement...</div>
+    <div className="chargement">Chargement...</div>
   ) : (
     data.results.map((comic) => {
       return (

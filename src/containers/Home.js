@@ -3,30 +3,26 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsloading] = useState(true);
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get("http://localhost:3000/");
-      console.log(response.data.data.results[0].name);
+      console.log(response.data.data);
       setData(response.data.data);
-      setIsloading(false);
+      setIsLoading(false);
     };
 
     fetchData();
   }, []);
 
   return isLoading ? (
-    <span>Chargement...</span>
+    <div className="chargement">Chargement...</div>
   ) : (
-    data.results.map((character) => {
+    data.results.map((character, index) => {
       return (
-        <Link
-          className="link"
-          key={character.id}
-          to={`/character/${character.id}`}
-        >
+        <Link className="link" key={index} to={`/character/${character.id}`}>
           <div className="charac-container">
             <div className="charac-card">
               <img
@@ -46,5 +42,9 @@ const Home = () => {
     })
   );
 };
+
+// composant search à faire
+// utiliser la route pour les détails des characters
+// utiliser le
 
 export default Home;

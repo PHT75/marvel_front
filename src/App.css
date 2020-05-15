@@ -37,6 +37,11 @@ h2 {
   font-family: "Helvetica Neue";
 }
 
+.chargement {
+  margin-top: 70px;
+  margin-left: 40px;
+}
+
 /* Characters */
 .charac-container {
   width: 1000px;

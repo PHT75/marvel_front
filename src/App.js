@@ -14,7 +14,7 @@ function App() {
         <Route path="/comics">
           <Comics />
         </Route>
-        <Route path="/character">
+        <Route path="/character/:id">
           <Character />
         </Route>
         <Route path="/">
