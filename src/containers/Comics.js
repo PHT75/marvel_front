@@ -7,7 +7,9 @@ const Comics = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/comics");
+      const response = await axios.get(
+        "https://marvel-pht-app.herokuapp.com/comics"
+      );
       console.log(response.data.data.results[0].title);
       setData(response.data.data);
       setIsloading(false);

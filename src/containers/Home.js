@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/");
+      const response = await axios.get("https://marvel-pht-app.herokuapp.com/");
       console.log(response.data.data);
       setData(response.data.data);
       setIsLoading(false);
